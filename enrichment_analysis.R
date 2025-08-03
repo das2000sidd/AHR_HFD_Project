@@ -12,11 +12,11 @@ library(magrittr)
 
 
 liver <- read.table(file="res_wt_vs_parp7mut_liver_df.txt",
-			header = T,
-			sep = "\t",
-			stringsAsFactors = F,
-			quote = ""
-			); ## 8214
+		header = T,
+		sep = "\t",
+		stringsAsFactors = F,
+		quote = ""
+		); ## 8214
 					
 hf_liver <- read.table(file="res_wt_vs_parp7mut_highfat_liver_df.txt",
 						header = T,
