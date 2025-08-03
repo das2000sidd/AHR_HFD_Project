@@ -10,38 +10,38 @@ liver <- read.table(file = "res_wt_vs_parp7mut_liver_df.txt",
 	); 
 					
 hf_liver <- read.table(file = "res_wt_vs_parp7mut_highfat_liver_df.txt",
-					   header = T,
-					   sep="\t",
-					   stringsAsFactors = F,
-					   quote = ""
-					   ); 
+	header = T,
+	sep="\t",
+	stringsAsFactors = F,
+	quote = ""
+	); 
 
 bat <- read.table(file = "res_wt_vs_parp7mut_BAT_df.txt",
-				  header = T,
-				  sep = "\t",
-				  stringsAsFactors = F,
-				  quote = ""
-				  ); 
+	header = T,
+	sep = "\t",
+	stringsAsFactors = F,
+	quote = ""
+	); 
 				  
 hf_bat <- read.table(file = "res_wt_vs_parp7mut_highfat_BAT_df.txt",
-					 header = T,
-					 sep = "\t",
-					 stringsAsFactors = F,
-					 quote = ""); 
+	header = T,
+	sep = "\t",
+	stringsAsFactors = F,
+	quote = ""); 
 
 wat <- read.table(file = "res_wt_vs_parp7mut_WAT_df.txt",
-				  header = T,
-				  sep = "\t",
-				  stringsAsFactors = F,
-				  quote = ""
-				  ); 
+	header = T,
+	sep = "\t",
+	stringsAsFactors = F,
+	quote = ""
+	); 
 				  
 hf_wat <- read.table(file = "res_wt_vs_parp7mut_highfat_WAT_df.txt",
-					 header = T,
-					 sep = "\t",
-					 stringsAsFactors = F,
-					 quote = ""
-					 ); 
+	header = T,
+	sep = "\t",
+	stringsAsFactors = F,
+	quote = ""
+	); 
 
 
 liver_up <- subset(liver,
