@@ -128,9 +128,9 @@ GO_ora_results_wat_hf_up_g <- enricher(
 	pAdjustMethod = "BH",
 	universe = all_background_genes,# Method to be used for multiple testing correction
 	TERM2GENE = dplyr::select(hs_GO_df,
-					gs_name,
-					ensembl_gene
-					)
+				gs_name,
+				ensembl_gene
+				)
 	);
 
 View(GO_ora_results_wat_hf_up_g@result);
