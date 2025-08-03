@@ -19,39 +19,38 @@ liver <- read.table(file="res_wt_vs_parp7mut_liver_df.txt",
 		); ## 8214
 					
 hf_liver <- read.table(file="res_wt_vs_parp7mut_highfat_liver_df.txt",
-						header = T,
-						sep = "\t",
-						stringsAsFactors = F,
-						quote = ""
-						); ## 9021
+		header = T,
+		sep = "\t",
+		stringsAsFactors = F,
+		quote = ""
+		); ## 9021
 
 bat <- read.table(file="res_wt_vs_parp7mut_BAT_df.txt",
-				header = T,
-				sep = "\t",
-				stringsAsFactors = F,
-				quote = "")
-				; ## 9582
+		header = T,
+		sep = "\t",
+		stringsAsFactors = F,
+		quote = ""); ## 9582
 				
 hf_bat <- read.table(file="res_wt_vs_parp7mut_highfat_BAT_df.txt",
-					header = T,
-					sep = "\t",
-					stringsAsFactors = F,
-					quote = ""
-					); ##9286
+		header = T,
+		sep = "\t",
+		stringsAsFactors = F,
+		quote = ""
+		); ##9286
 
 wat <- read.table(file="res_wt_vs_parp7mut_WAT_df.txt",
-				  header = T,
-				  sep = "\t",
-				  stringsAsFactors = F,
-				  quote = ""
-				  );## 9311
+		header = T,
+		sep = "\t",
+		stringsAsFactors = F,
+		quote = ""
+		);## 9311
 				  
 hf_wat <- read.table(file="res_wt_vs_parp7mut_highfat_WAT_df.txt",
-					header = T,
-					sep = "\t",
-					stringsAsFactors = F,
-					quote = ""
-					); ## 9582
+		header = T,
+		sep = "\t",
+		stringsAsFactors = F,
+		quote = ""
+		); ## 9582
 
 
 liver_up <- subset(hf_liver,hf_liver$log2FoldChange > 1 & hf_liver$padj < 0.05);
@@ -104,15 +103,15 @@ head(mm_msigdb_df)
 # curated gene sets
 hs_GO_df <- mm_msigdb_df %>%
   dplyr::filter(
-  				gs_cat == "C5", # This is to filter only to the C2 curated gene sets
-    			gs_subcat %in% c("GO:BP","GO:CC","GO:MF") # This is because we only want KEGG pathways
-  				);
+  	gs_cat == "C5", # This is to filter only to the C2 curated gene sets
+  	gs_subcat %in% c("GO:BP","GO:CC","GO:MF") # This is because we only want KEGG pathways
+  	);
 
 hs_KEGG_df <- mm_msigdb_df %>%
   dplyr::filter(
-  				gs_cat == "C2", # This is to filter only to the C2 curated gene sets
-  				gs_subcat %in% c("CP:KEGG") # This is because we only want KEGG pathways
-  				);
+  	gs_cat == "C2", # This is to filter only to the C2 curated gene sets
+  	gs_subcat %in% c("CP:KEGG") # This is because we only want KEGG pathways
+  	);
 
 
 ## ONLY RESULTS TO USE
@@ -124,15 +123,15 @@ all_background_genes < unique(all_background_genes);
 
 ## AHRKO
 GO_ora_results_wat_hf_up_g <- enricher(
-										gene = wat_up_g, # A vector of your genes of interest
-										pvalueCutoff = 0.05, # Can choose a FDR cutoff
-										pAdjustMethod = "BH",
-										universe = all_background_genes,# Method to be used for multiple testing correction
-										TERM2GENE = dplyr::select(hs_GO_df,
-																  gs_name,
-																  ensembl_gene
-																  )
-										);
+	gene = wat_up_g, # A vector of your genes of interest
+	pvalueCutoff = 0.05, # Can choose a FDR cutoff
+	pAdjustMethod = "BH",
+	universe = all_background_genes,# Method to be used for multiple testing correction
+	TERM2GENE = dplyr::select(hs_GO_df,
+		gs_name,
+		ensembl_gene
+		)
+	);
 
 View(GO_ora_results_wat_hf_up_g@result);
 
