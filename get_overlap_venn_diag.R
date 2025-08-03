@@ -45,8 +45,8 @@ hf_wat <- read.table(file = "res_wt_vs_parp7mut_highfat_WAT_df.txt",
 
 
 liver_up <- subset(liver,
-			liver$log2FoldChange > 1 & liver$padj < 0.05
-			);
+	liver$log2FoldChange > 1 & liver$padj < 0.05
+	);
 					
 bat_up <- subset(bat,
 			bat$log2FoldChange > 1 & bat$padj < 0.05
