@@ -3,11 +3,11 @@ setwd("~/Desktop/PhD_Project_related/AHR_HFD_Study");
 library(VennDiagram);
 
 liver <- read.table(file = "res_wt_vs_parp7mut_liver_df.txt",
-					header = T,
-					sep = "\t",
-					stringsAsFactors = F,
-					quote = ""
-					); 
+	header = T,
+	sep = "\t",
+	stringsAsFactors = F,
+	quote = ""
+	); 
 					
 hf_liver <- read.table(file = "res_wt_vs_parp7mut_highfat_liver_df.txt",
 					   header = T,
