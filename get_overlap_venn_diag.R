@@ -49,8 +49,8 @@ liver_up <- subset(liver,
 			);
 					
 bat_up <- subset(bat,
-				bat$log2FoldChange > 1 & bat$padj < 0.05
-				);
+			bat$log2FoldChange > 1 & bat$padj < 0.05
+			);
 				 
 wat_up <- subset(wat,
 				wat$log2FoldChange > 1 & wat$padj < 0.05
