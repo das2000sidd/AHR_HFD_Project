@@ -140,7 +140,8 @@ enrich_plot <- enrichplot::dotplot(GO_ora_results_wat_hf_up_g,
 				font.size = 10,
 				title = "GO term enrichment for genes up in WAT tissue PARP7H532A mutant relative to WT high fat diet",
 				orderBy = "p.adjust", 
-				decreasing = FALSE);
+				decreasing = FALSE
+				);
 
 enrich_plot;
 
