@@ -18,10 +18,10 @@ library(org.Mm.eg.db);
 
 
 res <- read.table(file="GRCm39_gene_and_transcript_stable_ID_version.txt",
-				  header = T,
-				  sep="\t",
-				  stringsAsFactors = F
-				  );
+	header = T,
+	sep="\t",
+	stringsAsFactors = F
+	);
 
 res <- res[,c(1,4)];
 
@@ -119,8 +119,8 @@ dds <- estimateSizeFactors(dds);
 ###PCA plot***
 
 plotPCA(vsd, 
-		intgroup = c("Genotype")) + 
-		ggtitle("PCA by genotype");
+	intgroup = c("Genotype")) + 
+	ggtitle("PCA by genotype");
 
 
 ## DE analysis using DESeq2
